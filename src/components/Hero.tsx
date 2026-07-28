@@ -281,32 +281,18 @@ export const Hero: React.FC = () => {
             animate="visible"
             className="lg:col-span-7 space-y-6 text-left"
           >
-            {/* Status badges row */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2">
-              {/* Open to hire badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/8 backdrop-blur-md">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">
-                  Open to Opportunities · M.Tech 2026
-                </span>
-              </div>
-              {/* IEEE Published */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-accent-cyan/30 bg-accent-cyan/5 backdrop-blur-md">
-                <Award size={11} className="text-accent-cyan" />
-                <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-accent-cyan font-medium">
-                  IEEE Published Author
-                </span>
-              </div>
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+              <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-accent-cyan font-medium">
+                Portfolio System Online
+              </span>
             </motion.div>
 
             <div className="space-y-2">
               <AnimatedTitle text="S Karthik" />
               
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 font-space text-lg md:text-2xl font-light text-slate-400">
-                <TypewriterRole />
+                <span>Integrated M.Tech Student</span>
                 <span className="hidden sm:inline text-white/20">|</span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-cyan font-medium">
                   Software Engineering
@@ -318,7 +304,7 @@ export const Hero: React.FC = () => {
               variants={itemVariants}
               className="text-slate-300 text-sm md:text-base leading-relaxed max-w-xl font-inter font-light"
             >
-              I engineer software that bridges AI research and real-world production — from IEEE-published quantum neural networks for medical imaging to full-stack multi-tenant SaaS platforms. M.Tech Integrated student at VIT-AP building systems that matter.
+              I build full-stack web applications and machine learning systems. Experienced in creating responsive web tools using Java, React, Next.js, MongoDB, and SQL, and designing hybrid quantum-classical neural networks (QCNN) for medical image computer vision pipelines.
             </motion.p>
 
             {/* Actions & Links */}
