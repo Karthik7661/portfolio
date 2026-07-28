@@ -135,7 +135,7 @@ const TiltCard: React.FC<{ cert: Certificate; onClick: () => void }> = ({ cert, 
 
 export const Certifications: React.FC = () => {
   return (
-    <section id="certifications" className="py-24 relative overflow-hidden bg-[#030712] border-t border-white/5">
+    <section id="certifications" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5">
       {/* Background visual light elements */}
       <div className="absolute top-[20%] right-[-15%] w-[450px] h-[450px] rounded-full bg-accent-blue/5 blur-[120px] pointer-events-none" />
 

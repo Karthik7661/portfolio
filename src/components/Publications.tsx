@@ -57,7 +57,7 @@ export const Publications: React.FC = () => {
   const handleHoverEnd = () => setCursorType("default");
 
   return (
-    <section id="publications" className="py-24 relative overflow-hidden bg-[#030712] border-t border-white/5">
+    <section id="publications" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5">
       {/* Aurora glow */}
       <div className="absolute top-[40%] left-[-15%] w-[450px] h-[450px] rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none" />
 

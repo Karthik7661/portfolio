@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import { CustomCursor } from "@/components/CustomCursor";
+import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { AboutTimeline } from "@/components/AboutTimeline";
 import { SkillsViz } from "@/components/SkillsViz";
@@ -10,7 +11,13 @@ import { Publications } from "@/components/Publications";
 import { Certifications } from "@/components/Certifications";
 import { GithubSection } from "@/components/GithubSection";
 import { ContactForm } from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
 import Lenis from "lenis";
+
+const Scene = dynamic(() => import("@/components/canvas/Scene"), {
+  ssr: false,
+});
 
 export default function Home() {
   useEffect(() => {
@@ -40,8 +47,14 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen w-full flex flex-col z-10">
+      {/* 3D Background Sphere Canvas */}
+      <Scene />
+
       {/* Global Interactive Overlays */}
       <CustomCursor />
+
+      {/* Floating Navbar */}
+      <Navbar />
 
       {/* Main Sections */}
       <Hero />
@@ -52,6 +65,7 @@ export default function Home() {
       <Certifications />
       <GithubSection />
       <ContactForm />
+      <Footer />
     </main>
   );
 }

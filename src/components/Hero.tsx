@@ -1,12 +1,39 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePortfolio } from "@/context/PortfolioContext";
 import { Monogram } from "./Monogram";
-import { FileText, ArrowRight, Mail } from "lucide-react";
+import { FileText, ArrowRight, Mail, Award, Zap } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+
+// Typewriter hook
+function useTypewriter(words: string[], speed = 90, pause = 2000) {
+  const [display, setDisplay] = useState("");
+  const [wordIdx, setWordIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = words[wordIdx % words.length];
+    let timeout: ReturnType<typeof setTimeout>;
+    if (!deleting && charIdx < current.length) {
+      timeout = setTimeout(() => setCharIdx((c) => c + 1), speed);
+    } else if (!deleting && charIdx === current.length) {
+      timeout = setTimeout(() => setDeleting(true), pause);
+    } else if (deleting && charIdx > 0) {
+      timeout = setTimeout(() => setCharIdx((c) => c - 1), speed / 2);
+    } else {
+      setDeleting(false);
+      setWordIdx((w) => (w + 1) % words.length);
+    }
+    setDisplay(current.slice(0, charIdx));
+    return () => clearTimeout(timeout);
+  }, [charIdx, deleting, wordIdx, words, speed, pause]);
+
+  return display;
+}
 
 import { QcnnVisualizer } from "./QcnnVisualizer";
 
@@ -134,6 +161,23 @@ const AnimatedTitle: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
+// Typewriter role component
+const TypewriterRole: React.FC = () => {
+  const text = useTypewriter([
+    "Integrated M.Tech Student",
+    "Full-Stack Engineer",
+    "Quantum ML Researcher",
+    "SaaS Builder",
+  ], 80, 2200);
+
+  return (
+    <span className="min-w-[220px] inline-block">
+      {text}
+      <span className="inline-block w-0.5 h-5 bg-accent-cyan ml-0.5 animate-pulse align-middle" />
+    </span>
+  );
+};
+
 export const Hero: React.FC = () => {
   const { setCursorType, setMagneticElement } = usePortfolio();
   const [activeTab, setActiveTab] = useState<"portrait" | "qcnn">("portrait");
@@ -237,18 +281,32 @@ export const Hero: React.FC = () => {
             animate="visible"
             className="lg:col-span-7 space-y-6 text-left"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
-              <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-accent-cyan font-medium">
-                Portfolio System Online
-              </span>
+            {/* Status badges row */}
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2">
+              {/* Open to hire badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/8 backdrop-blur-md">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">
+                  Open to Opportunities · M.Tech 2026
+                </span>
+              </div>
+              {/* IEEE Published */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-accent-cyan/30 bg-accent-cyan/5 backdrop-blur-md">
+                <Award size={11} className="text-accent-cyan" />
+                <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-accent-cyan font-medium">
+                  IEEE Published Author
+                </span>
+              </div>
             </motion.div>
 
             <div className="space-y-2">
               <AnimatedTitle text="S Karthik" />
               
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 font-space text-lg md:text-2xl font-light text-slate-400">
-                <span>Integrated M.Tech Student</span>
+                <TypewriterRole />
                 <span className="hidden sm:inline text-white/20">|</span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-cyan font-medium">
                   Software Engineering
@@ -260,7 +318,7 @@ export const Hero: React.FC = () => {
               variants={itemVariants}
               className="text-slate-300 text-sm md:text-base leading-relaxed max-w-xl font-inter font-light"
             >
-              I build full-stack web applications and machine learning systems. Experienced in creating responsive web tools using Java, React, Next.js, MongoDB, and SQL, and designing hybrid quantum-classical neural networks (QCNN) for medical image computer vision pipelines.
+              I engineer software that bridges AI research and real-world production — from IEEE-published quantum neural networks for medical imaging to full-stack multi-tenant SaaS platforms. M.Tech Integrated student at VIT-AP building systems that matter.
             </motion.p>
 
             {/* Actions & Links */}
@@ -277,7 +335,7 @@ export const Hero: React.FC = () => {
 
               <a
                 ref={resumeBtnRef}
-                href="https://drive.google.com/uc?export=download&id=1a_hHzzzRlMDvpViGft_0ktssrgbDv-uc"
+                href="https://drive.google.com/uc?export=download&id=1mgSjRQxp4ySC-boe7qYLlx51pBpMGqUx"
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() => handleHoverStart("magnetic", resumeBtnRef.current)}

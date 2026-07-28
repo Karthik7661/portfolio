@@ -34,41 +34,81 @@ interface ProjectDetails {
 
 const PROJECTS_DATA: ProjectDetails[] = [
   {
-    id: "task-manager",
-    title: "Task Management Web Application",
-    category: "Full-Stack Web Engineering",
-    shortDesc: "Full-stack task planner constructed with Next.js API serverless routes and MongoDB, fully deployed on Vercel.",
-    longDesc: "A complete, production-ready full-stack task organizer. Features API routes constructed in Next.js to add, view, update, and delete tasks with search and filters. Integrates MongoDB for cloud persistence, structured with Mongoose schema models, and deployed on Vercel for high scalability.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MongoDB", "Mongoose", "Vercel"],
-    github: "https://github.com/Karthik7661/Task-Management",
-    live: "https://taskmanagernew-sigma.vercel.app",
+    id: "campus-food-app",
+    title: "Smart Food Campus Ordering System",
+    category: "Real-Time Cloud Backend & Web App",
+    shortDesc: "Real-time food ordering and management platform with Firebase Firestore database sync and live order tracking.",
+    longDesc: "A food ordering and management platform for campus dining. Features real-time order tracking and database synchronization using Firebase Firestore, secure user authentication, interactive menu management, and administrative control panels for tracking order workflows.",
+    tech: ["JavaScript", "Firebase", "Firestore", "HTML5", "CSS3", "Vercel"],
+    github: "https://github.com/Karthik7661/Campus_Food_App",
+    live: "https://campus-food-app-ten.vercel.app/",
     features: [
-      "Created backend REST API routes in Next.js to add, view, update, and delete tasks with search and filters.",
-      "Used a MongoDB database to save tasks and connect the application to the cloud database.",
-      "Deployed both the website frontend and the REST API to Vercel so the application is live online.",
-      "Type-safe structures enforced with TypeScript and styled using modern Tailwind CSS frameworks."
+      "Real-time order status tracking and inventory updates using Firebase Firestore listeners.",
+      "Firebase Authentication integration for secure user registration and session persistence.",
+      "Interactive food menu browser with dynamic cart management and order summaries.",
+      "Admin management dashboard for real-time order status updates and kitchen workflow control.",
+      "Fully responsive modern UI deployed on Vercel for high availability."
     ],
     architecture: {
-      text: "Next.js Frontend (React) -> Next.js API Routes -> Mongoose Schema -> MongoDB Atlas (Cloud)",
+      text: "Responsive Frontend (JS/HTML5/CSS3) -> Firebase Auth & Firestore DB -> Real-time Admin & Customer Listeners",
       details: [
-        "**Next.js Frontend Layer**: Fluid, responsive glassmorphic task dashboards styled using CSS variables.",
-        "**Next.js API Routes**: Serverless API routes executing REST workflows with type validations.",
-        "**MongoDB Cloud**: Persistent document storage structured via Mongoose schema definitions."
+        "**UI Layer**: Clean HTML5/CSS3 responsive client interface with dynamic JavaScript cart handlers.",
+        "**Cloud Database**: Firebase Firestore document database supporting real-time data sync listeners.",
+        "**Auth & Security**: Firebase Auth providing user identity management and Firestore security rules."
       ]
     },
     results: {
       stats: [
-        { label: "Framework", value: "Next.js" },
-        { label: "Deployment", value: "Vercel" },
-        { label: "DB Engine", value: "MongoDB" },
-        { label: "Type Safety", value: "TypeScript" }
+        { label: "Live Site", value: "Vercel" },
+        { label: "Database", value: "Firestore DB" },
+        { label: "Sync Speed", value: "Real-Time" },
+        { label: "Auth Provider", value: "Firebase" }
       ],
-      text: "The application handles CRUD operations, nested category filters, pagination, and multi-user access rules. It has been audited for security and load-tested for concurrency issues."
+      text: "Successfully deployed on Vercel with real-time order updates between customers and campus vendor admin panels."
     },
     lessons: [
-      "Structuring API route endpoints within Next.js App Router serverless guidelines.",
-      "Managing connection limits to MongoDB Atlas within serverless cloud function executions.",
-      "Enforcing Mongoose model schema validations for user-submitted task parameters."
+      "Setting up real-time snapshot listeners in Firebase Firestore for instant status updates.",
+      "Designing security rules in Firestore to restrict admin-only order modifications.",
+      "Managing local cart state and synchronizing pending transactions with cloud databases."
+    ]
+  },
+  {
+    id: "devflow",
+    title: "DevFlow – Multi-Tenant SaaS Agile Platform",
+    category: "Enterprise Full-Stack & SaaS Architecture",
+    shortDesc: "Multi-tenant SaaS platform for managing software workspaces, agile sprints, and real-time Kanban task boards.",
+    longDesc: "A complete multi-tenant SaaS application engineered to manage software workspaces, projects, agile sprints, and task tracking. Built with Next.js 14 and Express.js REST APIs, featuring custom @dnd-kit interactive Kanban boards, Recharts analytics, MySQL database managed via Prisma ORM, and Firebase RBAC authentication.",
+    tech: ["Next.js", "Express.js", "MySQL", "Prisma", "TypeScript", "Tailwind CSS", "Firebase", "Zustand"],
+    github: "https://github.com/Karthik7661/DevFlow",
+    live: "https://devflow-ten.vercel.app/",
+    features: [
+      "Multi-tenant workspace architecture supporting ADMIN, MANAGER, and DEVELOPER role permissions.",
+      "Interactive drag-and-drop Kanban boards engineered with @dnd-kit for seamless task tracking.",
+      "Agile sprint management with task backlog organization, subtasks, and progress indicators.",
+      "Real-time analytics dashboard powered by Recharts with burndown metrics and CSV export functionality.",
+      "Express.js backend with TypeScript, strict Zod payload validation, and relational MySQL schemas via Prisma ORM."
+    ],
+    architecture: {
+      text: "Next.js 14 Frontend (Zustand, @dnd-kit) -> Express.js REST API (TypeScript) -> Prisma ORM -> MySQL Database",
+      details: [
+        "**Frontend Layer**: Next.js 14 App Router with Zustand global state management and @dnd-kit drag-and-drop.",
+        "**Backend API**: Modular Express.js server in TypeScript with Firebase Auth token verification middleware and Zod schema validation.",
+        "**Database & ORM**: MySQL database schema with relational cascade rules, indexes, and migrations managed via Prisma ORM."
+      ]
+    },
+    results: {
+      stats: [
+        { label: "Architecture", value: "Multi-Tenant" },
+        { label: "State Mgmt", value: "Zustand" },
+        { label: "DB Engine", value: "MySQL/Prisma" },
+        { label: "Auth Model", value: "Firebase RBAC" }
+      ],
+      text: "DevFlow provides scalable multi-tenant workspace separation, fluid drag-and-drop state updates, type-safe API controllers, and instant analytics visualization."
+    },
+    lessons: [
+      "Designing multi-tenant relational schemas with Prisma ORM and handling cascading relationships in MySQL.",
+      "Implementing optimistic UI updates for drag-and-drop Kanban boards using Zustand and @dnd-kit.",
+      "Securing Express.js API endpoints with custom Firebase Admin token verification middleware."
     ]
   },
   {
@@ -180,7 +220,7 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-[#030712] border-t border-white/5">
+    <section id="projects" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5">
       <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-accent-blue/5 blur-[90px] pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">

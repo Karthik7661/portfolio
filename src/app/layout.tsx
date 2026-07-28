@@ -24,8 +24,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "S Karthik | Software Engineering Portfolio",
-  description: "Integrated M.Tech Software Engineering student at VIT-AP building full-stack web applications and machine learning systems. Explore projects, publications, and certifications.",
+  metadataBase: new URL("https://portfolio-one-gules-juc6kxjk7e.vercel.app"),
+  title: "S Karthik | Software Engineer & IEEE Published Researcher",
+  description: "M.Tech Integrated Software Engineering student at VIT-AP. IEEE-published quantum ML researcher. Building full-stack SaaS apps and QCNN pipelines for medical imaging.",
   keywords: [
     "S Karthik",
     "Software Engineering",
@@ -35,30 +36,32 @@ export const metadata: Metadata = {
     "QCNN Brain Tumor",
     "Medical Image Analysis",
     "VIT-AP University",
+    "DevFlow SaaS",
+    "IEEE Published",
   ],
   authors: [{ name: "S Karthik", url: "mailto:skarthik7661@gmail.com" }],
   creator: "S Karthik",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://skarthik.dev",
-    title: "S Karthik | Software Engineering Portfolio",
-    description: "Integrated M.Tech Software Engineering student at VIT-AP building high-performance scalable backend systems and medical image analysis deep learning pipelines.",
+    url: "https://portfolio-one-gules-juc6kxjk7e.vercel.app",
+    title: "S Karthik | Software Engineer & IEEE Published Researcher",
+    description: "IEEE-published quantum ML researcher & full-stack engineer. M.Tech student at VIT-AP building SaaS platforms and QCNN medical imaging pipelines.",
     siteName: "S Karthik Portfolio",
     images: [
       {
-        url: "/images/placeholder.webp", // Will act as fallback, or another image
+        url: "/images/profile_styled.jpg",
         width: 1200,
         height: 630,
-        alt: "S Karthik Portfolio",
+        alt: "S Karthik - Software Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "S Karthik | Software Engineering Portfolio",
-    description: "Integrated M.Tech Software Engineering student at VIT-AP building high-performance scalable backend systems and medical image analysis deep learning pipelines.",
-    images: ["/images/placeholder.webp"],
+    title: "S Karthik | Software Engineer & IEEE Published Researcher",
+    description: "IEEE-published quantum ML researcher & full-stack engineer. M.Tech student at VIT-AP.",
+    images: ["/images/profile_styled.jpg"],
   },
   robots: {
     index: true,

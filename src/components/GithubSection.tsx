@@ -70,7 +70,7 @@ export const GithubSection: React.FC = () => {
   const handleHoverEnd = () => setCursorType("default");
 
   return (
-    <section id="github" className="py-24 relative overflow-hidden bg-[#030712] border-t border-white/5">
+    <section id="github" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5">
       {/* Background radial glow */}
       <div className="absolute top-[30%] left-[-10%] w-[350px] h-[350px] rounded-full bg-accent-purple/5 blur-[90px] pointer-events-none" />
 

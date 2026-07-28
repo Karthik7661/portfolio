@@ -32,6 +32,14 @@ const TIMELINE_DATA: TimelineItem[] = [
     tags: ["Board of Intermediate Education", "Mathematics", "Physics", "Chemistry"],
   },
   {
+    year: "2022 - 2023",
+    title: "Smart Food Campus Ordering System",
+    subtitle: "Campus Food App Project",
+    description: "Engineered a real-time food ordering platform for campus dining. Integrated Firebase Firestore for real-time order synchronization, Firebase Auth for user security, dynamic food menu management, and administrative tracking control panels.",
+    icon: <Code size={18} />,
+    tags: ["JavaScript", "Firebase", "Firestore", "HTML5/CSS3", "Vercel"],
+  },
+  {
     year: "2022 - 2027",
     title: "Integrated M.Tech in Software Engineering",
     subtitle: "VIT-AP University",
@@ -57,11 +65,11 @@ const TIMELINE_DATA: TimelineItem[] = [
   },
   {
     year: "2025 - 2026",
-    title: "Full-Stack Development & Task Management",
-    subtitle: "Web Application Project Phase",
-    description: "Engineered and deployed a Task Management System. Built a responsive React dashboard, designed custom serverless REST API endpoints in Next.js, and integrated MongoDB Atlas for cloud document persistence.",
+    title: "DevFlow – Multi-Tenant SaaS Agile Platform",
+    subtitle: "Web & Enterprise Backend Architecture",
+    description: "Architected DevFlow (a multi-tenant SaaS workspace and agile sprint platform built with Next.js 14, Express.js, Prisma ORM, MySQL, and Zustand state management with @dnd-kit Kanban boards).",
     icon: <Code size={18} />,
-    tags: ["Next.js", "React", "MongoDB", "REST APIs", "Vercel Deployment"],
+    tags: ["Next.js", "Express.js", "MySQL", "Prisma", "Zustand", "REST APIs"],
   },
 ];
 
@@ -85,7 +93,7 @@ export const AboutTimeline: React.FC = () => {
   const handleHoverEnd = () => setCursorType("default");
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#030712]">
+    <section id="about" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5">
       {/* Glow spots */}
       <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-accent-blue/5 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-accent-purple/5 blur-[100px] pointer-events-none" />

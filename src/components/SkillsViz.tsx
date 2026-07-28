@@ -29,8 +29,8 @@ const SKILLS_DATA: SkillCategory[] = [
     skills: [
       { name: "Java", level: 95, years: "3+ Years", notes: "Core OOP, multithreading, Stream API, collections" },
       { name: "SQL", level: 85, years: "2+ Years", notes: "Structured queries, join optimizations, indexing" },
-      { name: "Python (Basic)", level: 30, years: "1.5 Years", notes: "Basic scripting, numpy manipulation, model evaluation" },
-      { name: "JavaScript (Basic)", level: 30, years: "1 Year", notes: "Basic ES6 syntax, asynchronous operations, basic DOM calls" }
+      { name: "Python", level: 60, years: "1.5 Years", notes: "Scripting, numpy/pandas manipulation, ML model evaluation and training pipelines" },
+      { name: "JavaScript", level: 60, years: "1 Year", notes: "ES6+ syntax, async/await patterns, DOM manipulation, Node.js fundamentals" }
     ]
   },
   {
@@ -103,7 +103,7 @@ export const SkillsViz: React.FC = () => {
   const handleHoverEnd = () => setCursorType("default");
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[#030712] border-t border-white/5">
+    <section id="skills" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5">
       {/* Background blobs */}
       <div className="absolute top-[30%] right-[-10%] w-[350px] h-[350px] rounded-full bg-accent-cyan/5 blur-[90px] pointer-events-none" />
       

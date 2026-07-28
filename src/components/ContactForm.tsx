@@ -45,7 +45,7 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-[#030712] border-t border-white/5 flex flex-col justify-between min-h-[90vh]">
+    <section id="contact" className="py-24 relative overflow-hidden bg-transparent border-t border-white/5 flex flex-col justify-between min-h-[90vh]">
       {/* Background glowing elements */}
       <div className="absolute top-[40%] right-[-10%] w-[350px] h-[350px] rounded-full bg-accent-blue/5 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-accent-purple/5 blur-[100px] pointer-events-none" />
@@ -147,7 +147,7 @@ export const ContactForm: React.FC = () => {
                   <FaLinkedinIn size={16} />
                 </a>
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1a_hHzzzRlMDvpViGft_0ktssrgbDv-uc"
+                  href="https://drive.google.com/uc?export=download&id=1mgSjRQxp4ySC-boe7qYLlx51pBpMGqUx"
                   target="_blank"
                   rel="noopener noreferrer"
                   onMouseEnter={() => handleHoverStart("hover")}
