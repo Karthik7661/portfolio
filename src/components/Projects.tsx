@@ -80,7 +80,7 @@ const PROJECTS_DATA: ProjectDetails[] = [
     longDesc: "A complete multi-tenant SaaS application engineered to manage software workspaces, projects, agile sprints, and task tracking. Built with Next.js 14 and Express.js REST APIs, featuring custom @dnd-kit interactive Kanban boards, Recharts analytics, MySQL database managed via Prisma ORM, and Firebase RBAC authentication.",
     tech: ["Next.js", "Express.js", "MySQL", "Prisma", "TypeScript", "Tailwind CSS", "Firebase", "Zustand"],
     github: "https://github.com/Karthik7661/DevFlow",
-    live: "https://devflow-ten.vercel.app/",
+    live: "https://frontend-rosy-xi-15.vercel.app/",
     features: [
       "Multi-tenant workspace architecture supporting ADMIN, MANAGER, and DEVELOPER role permissions.",
       "Interactive drag-and-drop Kanban boards engineered with @dnd-kit for seamless task tracking.",
